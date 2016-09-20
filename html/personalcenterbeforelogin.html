@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<meta content="YES" name="apple-touch-fullscreen">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="telephone=no" name="format-detection">
+<link type="text/css" rel="stylesheet" href="../css/normalize.css">
+<link type="text/css"  rel="stylesheet" href="../css/innerPage.css" />
+<link rel="apple-touch-icon" href="images/common/quick_Logo.png" />
+<link rel="apple-touch-icon-precomposed"  href="images/common/quick_Logo.png">
+<title>八百方网上药店触屏版</title>
+</head>
+
+<body><div style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;" id="nTalk_post_hiddenElement"></div>
+  <div class="wrap">
+      <header id="header" class="header"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<p class="hd_tit" id="hd_tit">会员登录</p>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<script type="text/javascript" src="js/header.js?v=3.2"></script>
+<script language="javascript" type="text/javascript">
+
+function getLatestUrlToB2c() {
+    var fromurl = getCookie("fromurl_800pharm_visitor");
+    var sem = getCookie("sem_src");
+    if (fromurl == null && sem == null) {
+        return "";
+    } else if (fromurl != null && sem == null) {
+        return "(F:"+fromurl+")";
+    } else if (fromurl == null && sem != null) {
+        return "(S:"+sem+")";
+    } else if(fromurl != null && sem != null){
+       return "("+fromurl+"，"+sem+")";
+    }
+}
+
+var promotion = getLatestUrlToB2c();  //得到cookie中的推广参数
+if(promotion != null && promotion != ""){
+    promotion = promotion.substring(1, promotion.length-1);
+}
+
+var bf_iteminfo;
+var bf_iteminfo_pay;
+var bf_iteminfo_confirm;
+NTKF_PARAM = {
+    siteid:'bf_1000',                         
+    settingid:'bf_1000_1450344131702',                
+    uid:TempCache.getItem("user_id")||'',                             
+    uname:TempCache.getItem("user_id")||'游客', 
+     erpparam : promotion
+
+};
+if(bf_iteminfo){
+    NTKF_PARAM.ntalkerparam = bf_iteminfo;
+}
+  
+  if(bf_iteminfo_pay){
+  NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+  NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+    }
+
+ if( bf_iteminfo_confirm ) {
+  
+  NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;   //璁㈠崟椤甸潰鎬讳环鏍� 
+  NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+ }
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+      <div class="memberLogin">
+          <div class="wechat_login" id="wechat_login_div" style="display:none">
+              <a href="/shop/member/rWx.html" class="wx_login"><span class="wx_icon"></span>使用微信账号登录</a>
+                <p class="line"></p><span class="text">或</span><p class="line"></p>
+            </div>
+          <div class="bbf_login">
+              <form>
+                  <div class="radiusBox">
+                        <div class="b_username">
+                            <span>账 号：</span>
+                            <input id="username" name="username" placeholder="请输入您的用户名/手机号/邮箱" type="text">
+                        </div>
+                        <div class="b_password">
+                            <span>密 码：</span>
+                            <input id="password" name="password" placeholder="请输入您的密码" type="password">
+                        </div>
+                    </div>
+                    <p class="warning"></p>
+                    <div class="b_btn">
+                      <input class="btn_login" value="登录" onclick="memberLogin(); " type="button">
+                        <input class="btn_register" value="快速注册" onclick="memberRegister(); " type="button">
+                    </div>
+                </form>
+            </div>
+            <a class="login_forgetPwd" href="forgetPwd.html">忘记密码？</a>
+            <div class="uni_login">
+              <p>没有八百方账号？用其他账号登录</p>
+              <div class="radiusBox">
+                  <a href="http://www.800pharm.com/shop/redirectQQLogin.html" class="qq_login">
+                      使用QQ账号登录
+                    </a>
+                    <a href="http://www.800pharm.com/shop/redirectSinaLogin.html" class="wb_login">
+                      使用新浪微博账号登录
+                    </a>
+                    <a href="http://www.800pharm.com/shop/redirectAlipayLogin.html" class="ali_login">
+                      使用支付宝账号登录
+                    </a>
+                </div>
+            </div>
+        </div>
+        <footer class="bbfFooter" id="footer"><p>互联网交易服务资格证书：国A20140001</p>
+<p><i class="wx"></i>微信公众号：<span class="guanzhu" id="wxfollow">babaifang800</span></p>
+<div class="mask_b"></div>
+<div class="footerToast" id="wxguanzhuToast">
+    <div class="toastTitle">关注八百方微信</div>
+    <div class="toastContent"><img src="images/pDetail/qrCode.png"></div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">知道了</a>
+    </div>
+</div>
+<div class="footerToast" id="guanzhuToast">
+    <div class="toastTitle">关注八百方微信</div>
+    <div class="toastContent">
+        <p>在微信添加搜索“<em>八百方</em>”公众号进行关注，并在“<em>手机商城</em>”菜单进行购物，首单即可享受<em>立减5元优惠</em>!</p>
+    </div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">知道了</a>
+    </div>
+</div>
+ <div class="footerToast" id="guanzhu_Toast">
+    <div class="toastTitle"></div>
+    <div class="toastContent">
+        <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请在微信浏览器下使用扫码功能哦~</p>
+    </div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">确认</a>
+    </div>
+</div> 
+<script src="http://trust.baidu.com/vcard/v.js?siteid=548427&amp;url=http%3A%2F%2Fwww.800pharm.com%2Fshop%2Fm%2FmemberLogin.html&amp;source=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DFW2AfHGgIPMQtjJWs6bj9ebiAyp2QQ3WtVzj1QoiM-xIuDFmYEwmcXOE5aCMMivk%26wd%3D%26eqid%3Da5b1f1a800001dca0000000457d74f0f&amp;rnd=174375921&amp;hm=1" charset="utf-8"></script>
+<script type="text/javascript" src="js/footer.js"></script>
+</footer>
+    </div>
+
+<script src="//hm.baidu.com/hm.js?e70be84907793e52f974a062e2bfcd4d"></script><script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="../js/localStorage.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/encrypt.js"></script>
+<script type="text/javascript" src="../js/memberLogin.js"></script>
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e70be84907793e52f974a062e2bfcd4d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

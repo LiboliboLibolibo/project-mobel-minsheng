@@ -1,0 +1,173 @@
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <meta content="YES" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <link type="text/css" rel="stylesheet" href="../css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="../css/innerPage.css">
+    <link rel="apple-touch-icon" href="images/common/quick_Logo.png">
+    <link rel="apple-touch-icon-precomposed" href="images/common/quick_Logo.png">
+    <title>八百方网上药店触屏版</title>
+<style type="text/css">.full-html,.full-body{width: 100% !important;height: 100% !important;margin: 0 !important;overflow: hidden !important;}.full-body *{display: none !important;}.full-iframe {display: block !important;}</style><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/zh_cn.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="lang"></script><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/chat.in.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="chatManage"></script><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/comet.chat.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="TChat"></script><script class="2649EDA1_4" type="text/javascript" async="async" src="http://him1.ntalker.com/flashIM/wdkstatus?action=conn&amp;params=bf_1000_ISME9754_1108745%2C1108745%2C%2C%2C%2C%2C%2Cbf_1000%2C%2C%2C%2Cguest93429744-C627-D7E3-1BF6-C092D65116A7%2C&amp;callback=callback_2649EDA1&amp;ts=1473735182421&amp;callbackname=callback_2649EDA1" charset="utf-8"></script></head>
+
+<body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
+<div class="wrap">
+    <header id="header" class="header"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<p class="hd_tit" id="hd_tit">订单确认</p>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<script type="text/javascript" src="../js/header.js"></script>
+<script language="javascript" type="text/javascript">
+
+function getLatestUrlToB2c() {
+    var fromurl = getCookie("fromurl_800pharm_visitor");
+    var sem = getCookie("sem_src");
+    if (fromurl == null && sem == null) {
+        return "";
+    } else if (fromurl != null && sem == null) {
+        return "(F:"+fromurl+")";
+    } else if (fromurl == null && sem != null) {
+        return "(S:"+sem+")";
+    } else if(fromurl != null && sem != null){
+       return "("+fromurl+"，"+sem+")";
+    }
+}
+
+var promotion = getLatestUrlToB2c();  //得到cookie中的推广参数
+if(promotion != null && promotion != ""){
+    promotion = promotion.substring(1, promotion.length-1);
+}
+
+var bf_iteminfo;
+var bf_iteminfo_pay;
+var bf_iteminfo_confirm;
+NTKF_PARAM = {
+    siteid:'bf_1000',                         
+    settingid:'bf_1000_1450344131702',                
+    uid:TempCache.getItem("user_id")||'',                             
+    uname:TempCache.getItem("user_id")||'游客', 
+     erpparam : promotion
+
+};
+if(bf_iteminfo){
+    NTKF_PARAM.ntalkerparam = bf_iteminfo;
+}
+  
+  if(bf_iteminfo_pay){
+  NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+  NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+    }
+
+ if( bf_iteminfo_confirm ) {
+  
+  NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;   //璁㈠崟椤甸潰鎬讳环鏍� 
+  NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+ }
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+    <div class="orderComfirm">
+        <a href="orderAddress.html" class="address">
+            <i class="iCar"></i>
+
+            <div class="adInfo" id="addr_list"><p class="adProvice">河南省 郑州市</p><p class="adDetail">河南省郑州市金水区纬五路经六路交叉口</p><p class="receive">李博<span class="recPhone">13253595213</span></p><input id="cityCode" value="10174" type="hidden"></div>
+        </a>
+        <ul class="odList" id="reg_form_list">
+        <li><a id="ld_shop100281" href="javascript:void(0);" class="orderHd orderOpen">广州博爱智谷医药连锁</a><div class="orderBox" id="endLi_shop100281"><dl><dd><a href="prodDetail.html?prod_id=755130&amp;shop_code=100281&amp;source=internal"><img class="op_pic" src="http://img.800pharm.com/images/20151208/20151208175222_710.jpg" width="70" height="70"></a><div class="op_detail"><h3>生命一号 10ml*10支+40粒 提高记忆力</h3><p class="op_standard">规格：218mg*40粒+10ml*10支</p><p class="op_producer">数量：<span class="cl_red">6</span></p><p class="op_merchant">总价：<span class="cl_red">￥180.00</span></p></div></dd></dl><div id="del_err_shop100281" class="orderMode"><h3>支付方式</h3><div class="chosen"><input type="radio" name="radio_pay_shop100281" id="radio_pay_shop1002811" value="1" checked="checked"><label for="radio_pay_shop1002811">预付备货金</label><input type="radio" name="radio_pay_shop100281" id="radio_pay_shop1002812" value="2"><label for="radio_pay_shop1002812">货到付款</label></div></div><div id="deliveryBox"><div class="orderMode" id="gird_shop100281"><h3>配送方式</h3><div class="chosen chooseOpen">顺丰速运￥22.00</div><div class="chooseArea" style="display: none;"><input del_val="8.00" name="radio_lgst_shop100281" id="radio_lgst_61728" value="61728" type="radio" checked="checked"><input id="lgst_shippingId_61728" value="3" type="hidden"><label class="" for="radio_lgst_61728">中通速递￥8.00</label><input del_val="11.00" name="radio_lgst_shop100281" id="radio_lgst_60060" value="60060" type="radio"><input id="lgst_shippingId_60060" value="2" type="hidden"><label for="radio_lgst_60060" class="">圆通速递￥11.00</label><input del_val="22.00" name="radio_lgst_shop100281" id="radio_lgst_60050" value="60050" type="radio"><input id="lgst_shippingId_60050" value="4" type="hidden"><label for="radio_lgst_60050" class="cl_red">顺丰速运￥22.00</label></div></div></div><div id="trueName" class="orderMode" style="display:none"><h3>姓名</h3><div class="chosen"><input class="messageBox" placeholder="请填写您的真实姓名！" type="text" value="李博"></div></div><div id="idCard" class="orderMode" style="display:none"><h3>身份证</h3><div class="chosen"><input class="messageBox" placeholder="请填写您的身份证！" type="text"></div></div><div id="popWin" class="orderMode" style="display:none"><div class="chosen"><input type="checkbox" id="agreement" checked="checked"><label>我已阅读并同意<a href="javascript:void(0);">《代理购结汇协议》</a></label></div></div><div id="card_list_shop100281" class="orderMode"><h3>优惠券</h3><div class="chosen chooseOpen">不使用优惠券</div><div class="chooseArea" style="display: none;"><input type="radio" cardpay="0" name="card_chk_100281" value="noCard" id="noCard_100281"><label for="noCard_100281" class="cl_red">不使用优惠券</label><div class="inputCard"><input class="ipr" type="radio" name="card" rel="100281" id="cardInputRadio_100281"><input type="text" id="cardInput_100281" class="cardInput" placeholder="手动输入商家优惠券编号"><input type="hidden" id="canUsedInputCard_100281" value="f"><input type="hidden" id="canUsedInputCardVal_100281" value="0"><a class="cardTest" href="javascript:void(0)" onclick="checkInputCard(100281)">验证</a><i class="cardTick" id="cardTick_100281"></i><p class="cardNotice" id="cardNotice_100281"></p></div></div></div><div class="orderMode"><h3>留言</h3><div class="chosen"><input id="100281_note" class="messageBox" type="text" placeholder="写下想对卖家说的话"></div></div></div><input type="hidden" id="freeDLFee_100281" value="0"><input type="hidden" id="maxFreeDlCompanyId_100281" value="undefined"><input type="hidden" id="cardSel_pay_100281" value="0"><input type="hidden" name="shopCode" value="100281"><input type="hidden" id="100281_shopName" value="广州博爱智谷医药连锁"><p class="orderAmout">共 <span class="cl_red">6</span> 件商品&nbsp;&nbsp;&nbsp;&nbsp;该订单总计：<span class="cl_red" id="shop100281_last_total_label" name="shopLastTotal" lasttotal="202">￥202.00</span><input type="hidden" id="shop100281_last_total" value="180"><input type="hidden" id="shop100281_shopGiveMoney" name="shopGiveMoney" value="0"></p></li></ul>
+        <div class="orderCoupon">
+            <h2>红包</h2>
+
+            <div class="chosen chooseOpen">暂不使用红包</div>
+            <div class="chooseArea" id="coupon_option_list" style="display: none;">
+                <input class="ipr" type="radio" name="coupon" id="noUseCoupon">
+                <label class="lbe cl_red" for="noUseCoupon">暂不使用红包</label>
+
+                <div class="inputCoupon">
+                    <input class="ipr" type="radio" name="coupon" id="couponInputRadio">
+                    <input type="text" id="couponInput" class="couponInput" placeholder="手动输入红包编号">
+                    <input type="hidden" id="canUsedInputCoupon" value="f">
+                    <input type="hidden" id="canUsedInputCouponVal" value="0">
+                    <a class="couponTest" href="javascript:void(0)" onclick="checkInputCoupon()">验证</a>
+                    <i class="tick" id="couponTick"></i>
+
+                    <p class="notice" id="couponNotice"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="orderScore">
+            <h2>积分</h2>
+
+            <div class="otherArea" id="score_notice_layer" style="display:none;"><input type="checkbox" value="Y" id="moneyToScoreflag" name="moneyToScoreflag" class="singleChoose">
+                <span id="score_notice"></span>
+            </div>
+
+            <div class="inputScore">
+
+                我要抵扣 <input type="text" id="moneyToScore" class="moneyToScore" style="width:80px;"> 元
+                <input type="hidden" id="moneyToScoreLimt" class="moneyToScoreLimt" placeholder="请输入使用金额">
+
+                <p class="notice" id="couponNotice"></p>
+            </div>
+
+        </div>
+        <div class="orderOther">
+            <h2>发票</h2>
+
+            <div class="otherArea"><input type="text" id="invoiceHead" placeholder=" 如需索要发票，请输入抬头"></div>
+        </div>
+        <div class="orderTotal">
+            <span class="realPay" id="realPay">实付款：(包含邮费)</span>
+            <span class="payTotal"><span class="cl_red" id="payTotal">￥202.00</span></span>
+            <input type="hidden" id="acutalPay_4cal" value="202.00">
+        </div>
+        <div class="orderScore_cls">
+            <span class="getScore" id="scoreTotal"><span class="cl_red">可获积分：202 分</span></span>
+        </div>
+        <div align="center">
+            <span style="color:red;" id="gift"></span>
+        </div>
+        <a href="javascript:void(0)" onclick="submit_order_func()" class="orderSettle"><span id="confirmButtonName">订单确认</span></a>
+
+        <div class="toast">
+            <p>抱歉，该商品已过期，请看看其他同类商品</p>
+        </div>
+    </div>
+
+    <div class="rx_tips_box">
+        <a class="close_btn" href="javascript:rx_tips_box_hide()">×</a>
+
+      <div class="tips_box">
+        <p>尊敬的顾客：</p>
+
+        <p style="text-indent: 2em">
+          为保障您的消费权益，受药品展示药店的委托我们将代收等值的备货保证金，稍后您的药品预订信息将由药品展示药店线下为您提供销售与药学服务；
+          如您预订的药品包含处方药，请您务必备好处方单，以便药品展示药店的药师进行审核。</p>
+        <p style="text-indent: 2em">该笔预付备货保证金在您确认收货后将自动转到药店帐户。</p>
+        <a class="know_rx_tips" href="javascript:know_rx_tips()">我知道了</a>
+      </div>
+    </div>
+</div>
+
+<div class="mask"></div>
+<div style="display:none;" id="xtcart"></div>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="../js/localStorage.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/orderConfirm.js"></script>
+<script type="text/javascript" src="../js/constants.js"></script>
+<script type="text/javascript" src="../js/encrypt.js"></script>
+</body>
+</html>

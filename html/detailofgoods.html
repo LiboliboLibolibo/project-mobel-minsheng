@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <meta content="YES" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <link type="text/css" rel="stylesheet" href="../css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="../css/innerPage.css">
+    <link type="text/css" rel="stylesheet" href="../css/swiper-3.3.1.min.css">
+    <link rel="apple-touch-icon" href="images/common/quick_Logo.png">
+    <link rel="apple-touch-icon-precomposed" href="images/common/quick_Logo.png">
+    <title>八百方网上药店触屏版</title>
+</head>
+
+<body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
+<div class="wrap" id="loadingDiv" style="display:none;">
+    <div class="loginLoading"></div>
+</div>
+<div class="wrap">
+    <header id="header" class="header" style="display:block;"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<div class="hd_tit">
+    <input class="hd_input" id="hd_input" type="text" placeholder="搜索药品名/症状" readonly="readonly" value="">
+</div>
+<div class="head_right">
+    <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+    <a id="daohang" class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+    <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<div id="searchMask" class="searchMask">
+    <div class="headerContainer">
+        <a href="javascript:searchMaskHide();" class="maskClose"></a>
+        <form class="searchBox">
+            <input class="main_input" type="text" placeholder="搜索药品名/症状" autocomplete="off" id="searchHeadContent">
+            <input class="search_btn" type="button" onclick="searchHead();">
+            <input class="empty_input" type="reset" value="" style="display: none;">
+        </form>
+        <div class="autocomplete" style="display: none;"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/header.js"></script>   
+<script language="javascript" type="text/javascript">
+var promotion;
+jQuery(document).ready(function() {
+    promotion = getLatestUrl(); //得到cookie中的推广参数
+    var bf_iteminfo;
+    var bf_iteminfo_pay;
+    var bf_iteminfo_confirm;
+    NTKF_PARAM = {
+            siteid: 'bf_1000',                         //平台基础id
+            settingid: 'bf_1000_1450344131702',                //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+            uid:TempCache.getItem("user_id")||'',                             
+            uname:TempCache.getItem("user_id")||'游客'                           //用户级别,1为vip用户,0为普通用户
+    };
+    if(bf_iteminfo){
+          NTKF_PARAM.ntalkerparam = bf_iteminfo;
+    }
+        
+    if(bf_iteminfo_pay){
+        NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+        NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+    }
+
+     if( bf_iteminfo_confirm ) {
+        NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;       //璁㈠崟椤甸潰鎬讳环鏍�   
+        NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+     }
+}); 
+</script>
+<script type="text/javascript" src="../js/ntkfstat.js" charset="utf-8"></script></header>
+    <div class="notFound" id="notFoundDiv" style="display:none;">
+        <div class="notFoundBox">
+            <p class="sorry">很抱歉，您查看的商品不存在，可能已下架或被转移。</p>
+
+            <div class="otherChoose">
+                <p>您可以：<a href="javascript:window.history.go(-1);">回到上一页</a></p>
+
+                <p>去其他地方逛逛：<a href="index.html">八百方首页</a></p>
+            </div>
+        </div>
+        <ul class="indexBaner" id="indexBaner"></ul>
+    </div>
+    <div class="pDetail" id="shelvesDiv" style="display:block;">
+        <input type="hidden" id="shelves_pid" value="755130">
+        <input type="hidden" id="shelves_shopCode" value="100281">
+        <input type="hidden" id="shelves_limitId" value="0">
+
+        <div class="baseInfo">
+            <div id="shelves_info" class="pd_info">
+                <div class="swiper-container mpdImg" id="pdImgContainer">
+                    <div class="pd_imgList swiper-wrapper">
+                        <div class="swiper-slide ll-swiper">
+                            <img class="pro_picture" src="../img/20151208175222_710_bbfm.jpg">
+                        </div>
+                        <div class="swiper-slide ll-swiper">
+                            <img class="pro_picture" src="../img/20151208175258_474_bbfm.jpg ">
+                        </div>
+                        <div class="swiper-slide ll-swiper">
+                            <img class="pro_picture" src="../img/20151208175325_660_bbfm.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="pName ">
+                    <h1><img class="rx " style="display:none;" src="images/pDetail/rx.png "><img class="otc " style="display:none;" src="images/pDetail/otc.png "><img class="crossborder " style="display:none;" src="images/pDetail/crossborder.png ">
+                    <span id="pro_name ">生命一号 10ml*10支+40粒 提高记忆力</span>
+                    </h1>
+                </div>
+                <dl>
+                    <dt id="RxTips " style="display:none ">本品为处方药，需凭处方购买</dt>
+                    <dt class="price ">价格：</dt>
+                    <dd class="cl_red " id="pro_salePrices ">￥30.00</dd>
+                    <dd id="pro_marketPrices "><del>￥38.00</del><span class="payAfter "><em>货到付款</em></span></dd><dt>编码：</dt><dd>755130</dd><dt>保障：</dt><dd><span class="zheng ">正品</span><span class="tui ">7天退换</span><span class="bao ">保障隐私</span></dd><dd class="favBox "><a class="fav " href="javascript:addShelvesFavory();">收藏</a></dd><dt class="zhengpinbaozheng "><span></span><span>八百方已委托中华保险为此商品承保，保证正品！</span></dt>
+                </dl>
+                <div class="sdNotice " style="display:none;"><a id="notice-xnkf " class="notice-xnkf " href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450926676525')">需求提交</a><a id="notice-xnkf_tel " class="notice-phone " href="tel:4008855171 ">客服热线</a> 
+                </div>
+            </div>
+
+            <div id="shelves_buy" class="buy"><dl><dt>规格：</dt><dd class="selectBox singleBox">218mg*40粒+10ml*10支</dd><dt>数量：</dt><dd><div class="countBox"><a href="javascript:countMinus();" class="minus">－</a><input class="count" value="1" maxlength="3" onkeyup="inputLimit()" type="tel"> <a href="javascript:countPlus();" class="plus">＋</a><span class="storage_tips">库存6件</span></div></dd></dl></div>
+            <!-- 商家优惠信息 -->
+            <div class="shelves_activity">
+                <div id="shelves_welfare" class="shelves_welfare" style="display: block;">活动：<span id="welGh" class="welItem">广货网上行</span><span id="welCard" class="welItem" style="display: inline;">优惠券</span><span id="welPrem" class="welItem">满立减</span>
+                </div>
+                <!-- 套餐 -->
+                <div id="shelves_package"></div>
+            </div>
+            <!-- 商品信息导航-->
+            <div id="shelves_nav" class="shelves_nav">
+                <a id="baseInfoDiv" class="shelvesNav" href="javascript:animateScroll('shelves_baseInfo');" style="display:none;">药品说明书</a>
+                <a id="proDetailDiv" class="shelvesNav" href="javascript:animateScroll('shelves_proDetail');" style="">图文详情</a>
+                <a id="commentDiv" class="shelvesNav" href="javascript:;">评论 (42)</a>
+            </div>
+            <!--评论-->
+            <div class="comtContent">
+                <div class="comtList" style="transition-property: -webkit-transform; transition-duration: 0.6s; transform: translate(-100%, 0px);">
+                    <ul class="comtBox"><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">2***1</span><span class="comtTime">2016-09-10</span><p class="comtAppend" style="display:none;" id="755130_1462028_div">追评：<span class="appendContent" id="755130_1462028"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***2</span><span class="comtTime">2016-07-12</span><p class="comtAppend" style="display:none;" id="755130_1390607_div">追评：<span class="appendContent" id="755130_1390607"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***6</span><span class="comtTime">2016-06-26</span><p class="comtAppend" style="display:none;" id="755130_1369691_div">追评：<span class="appendContent" id="755130_1369691"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">E***9</span><span class="comtTime">2016-06-12</span><p class="comtAppend" style="display:none;" id="755130_1348326_div">追评：<span class="appendContent" id="755130_1348326"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">B***B</span><span class="comtTime">2016-05-31</span><p class="comtAppend" style="display:none;" id="755130_1323992_div">追评：<span class="appendContent" id="755130_1323992"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***6</span><span class="comtTime">2016-05-12</span><p class="comtAppend" style="display:none;" id="755130_1303020_div">追评：<span class="appendContent" id="755130_1303020"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">2***2</span><span class="comtTime">2016-05-04</span><p class="comtAppend" style="display:none;" id="755130_1289748_div">追评：<span class="appendContent" id="755130_1289748"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***2</span><span class="comtTime">2016-05-01</span><p class="comtAppend" style="display:none;" id="755130_1284948_div">追评：<span class="appendContent" id="755130_1284948"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***6</span><span class="comtTime">2016-04-19</span><p class="comtAppend" style="display:none;" id="755130_1262294_div">追评：<span class="appendContent" id="755130_1262294"></span></p></li><li><p class="comtContent">好评 [未及时回复，系统默认好评]</p><span class="comtId">1***2</span><span class="comtTime">2016-04-07</span><p class="comtAppend" style="display:none;" id="755130_1238205_div">追评：<span class="appendContent" id="755130_1238205"></span></p></li></ul>
+                    <a class="mm_more" id="comment_more" href="javascript:searchMore();">查看更多评论</a>
+                </div>
+                <div class="comtMask" style="display: none;"></div>
+            </div>
+            <!-- 商家信息 -->
+            <div id="shop_company" class="shop_company"><a class="shopCompany" id="shopCompany" href="commodityList.html?shop_code=100281"><span id="companyName">广州博爱智谷医药连锁</span><p class="icon_star"><b style="width:100%"></b></p></a><div class="shopContact"><a class="xnkf" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450926676525')"><img class="xnkfImges" border="0" width="40" height="30" src="images/xnkf.png"></a><a class="telContact" href="tel:020-37886992"></a></div><p class="merchantTips">亲，中秋放假期间有库存的商品会正常发货，需要采购的部分商品需要5-6天发货。免运费的商品不适用货到付款，由于税务升级，本月1-6号开不了发票，需要发票的会在后期补发。</p></div>
+
+            <!--处方药购买流程图-->
+            <img id="RxProcessImg" src="images/pDetail/RxProcess.jpg" style="margin-top: 10px; width: 100%; display: none">
+            <!--处方药需求须知-->
+            <img id="RxNotice" src="images/pDetail/RxNotice.jpg" style="width: 100%; display: none">
+
+            <!-- 产品基本信息 -->
+            <div id="shelves_interest" class="shelves_interest"><h2>可能帮到你</h2><ul id="pro_interest"><li><a class="iHref" href="prodDetail.html?prod_id=1120298&amp;shop_code=100499&amp;source=internal"><img class="iPicture" style_external="width:90px; margin:0 auto; display:block; border:1px solid #efefef;" width="90" height="90" src="http://img.800pharm.com/images/20160411/20160411172830_830_bbfm.jpg" data-original="http://img.800pharm.com/images/20160411/20160411172830_830_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160411/20160411172830_830.jpg" style="width:90px; margin:0 auto; display:block; border:1px solid #efefef;"><p class="iName">每日每加 汤臣倍健维生素B族片 400mg*30片 优质睡眠血液卫士精神焕发</p><p class="iPrice">￥19.9</p></a></li><li><a class="iHref" href="prodDetail.html?prod_id=1103761&amp;shop_code=100499&amp;source=internal"><img class="iPicture" style_external="width:90px; margin:0 auto; display:block; border:1px solid #efefef;" width="90" height="90" src="http://img.800pharm.com/images/20160401/20160401142447_445_bbfm.jpg" data-original="http://img.800pharm.com/images/20160401/20160401142447_445_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160401/20160401142447_445.jpg" style="width:90px; margin:0 auto; display:block; border:1px solid #efefef;"><p class="iName">每日每加 汤臣倍健鱼油软胶囊</p><p class="iPrice">￥23.8</p></a></li><li><a class="iHref" href="prodDetail.html?prod_id=1120295&amp;shop_code=100499&amp;source=internal"><img class="iPicture" style_external="width:90px; margin:0 auto; display:block; border:1px solid #efefef;" width="90" height="90" src="http://img.800pharm.com/images/20160411/20160411172559_799_bbfm.jpg" data-original="http://img.800pharm.com/images/20160411/20160411172559_799_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160411/20160411172559_799.jpg" style="width:90px; margin:0 auto; display:block; border:1px solid #efefef;"><p class="iName">每日每加 汤臣倍健多种维生素矿物质片（男士）30片</p><p class="iPrice">￥19.9</p></a></li></ul></div>
+            <div id="shelves_baseInfo" style="display: none;"></div>
+            <div id="shelves_proDetail" class="pro_desc" style="display: block;"><h2 class="descTit" style="">图文详情</h2><p style="">&nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p style=""><img src="http://img.800pharm.com/images/20151208/71941449568451867_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_01.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/71941449568451867_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/71941449568451867.jpg"></p><p style=""><img src="http://img.800pharm.com/images/20151208/95221449568454656_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_02.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/95221449568454656_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/95221449568454656.jpg"></p><p style=""><img src="http://img.800pharm.com/images/20151208/67131449568459706_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_03.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/67131449568459706_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/67131449568459706.jpg"></p><p style=""><img src="http://img.800pharm.com/images/20151208/1831449568471341_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_04.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/1831449568471341_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/1831449568471341.jpg"></p><p style=""><img src="http://img.800pharm.com/images/20151208/53181449568474696_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_05.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/53181449568474696_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/53181449568474696.jpg"></p><p style=""><img src="http://img.800pharm.com/images/20151208/49601449568475709_bbfm.jpg" style="width: 100%; margin: 0px auto; float: left; display: inline;" title="生命一号&amp;#40;生命一号&amp;#41;_06.jpg" class="desc_img_lazy" style_external="width:100%; margin:0 auto; float:left;" data-original="http://img.800pharm.com/images/20151208/49601449568475709_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/49601449568475709.jpg"></p><p style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p style=""><br style=""></p><p style=""><br style=""></p></div>
+        </div>
+
+        <div id="shelves_fixedMenuBox" class="fixedMenuBox"><div class="buttonSet"><a href="javascript:autoLogin('buyNow');" class="buyBtn">立即购买</a><a href="javascript:autoLogin('addCart');" class="cartBtn">加入购物车</a><a href="javascript:gotoCart();" class="goCart"></a></div></div>
+        <div class="toast" id="shelves_toast"></div>
+        <!-- 套餐详细 -->
+        <div id="shelves_package_list"></div>
+        <!-- 活动优惠详细 -->
+        <div id="shelves_wel_list" class="welList">
+            <div class="popMask"></div>
+            <div class="popBox">
+                <div class="popContent">
+                    <div class="popTit">活动详情</div>
+                    <div class="popClose">×</div>
+                    <!--广货-->
+                    <div class="welBox" id="ghBox">
+                        <a class="ghBtn" href="spreadPage/ghzt.html">广货网上行<img src="images/ghLogo.png"></a>
+                    </div>
+                    <!--满立减-->
+                    <div class="welBox" id="premBox">
+                        <p class="welBoxTit">满立减</p>
+
+                        <div class="premContent" id="premContent"></div>
+                    </div>
+                    <!--优惠券-->
+                    <div class="welBox" id="cardBox" style="display: block;">
+                        <p class="welBoxTit">领取优惠券</p>
+
+                        <div class="cardContent" id="cardContent"><ul class="getCardList"><li class="cardBox"><div class="cardDetail"><div class="cardCost"><span class="cost">15</span>元</div><div class="cardLimit">订单满800元减15元</div><div class="cardDate">使用期限 2016.09.07-2016.12.31</div></div><a href="javascript:drawCard(10875,'1',100281,'','广州博爱智谷医药连锁','')" class="drawCard">领取</a></li><li class="cardBox"><div class="cardDetail"><div class="cardCost"><span class="cost">5</span>元</div><div class="cardLimit">订单满400元减5元</div><div class="cardDate">使用期限 2016.09.07-2016.12.31</div></div><a href="javascript:drawCard(10876,'1',100281,'','广州博爱智谷医药连锁','')" class="drawCard">领取</a></li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 下架页面 -->
+    <div class="pDetail" id="offshelfDiv" style="display:none;">
+        <input type="hidden" id="offshelf_pid">
+        <input type="hidden" id="offshelf_shopCode">
+
+        <div class="baseInfo">
+            <div id="offshelf_info"></div>
+            <div id="offshelf_otherSame"></div>
+            <div id="offshelf_interest"></div>
+        </div>
+        <div class="toast" id="offshelf_toast"></div>
+        <div class="mask_b"></div>
+        <div class="offshelfToast" id="wxguanzhuToast">
+            <div class="toastTitle">关注八百方微信</div>
+            <div class="toastContent"><img src="images/pDetail/qrCode.png"></div>
+            <div class="toastBtn">
+                <a href="javascript:void(0);" class="btnKnow">知道了</a>
+            </div>
+        </div>
+        <div class="offshelfToast" id="guanzhuToast">
+            <div class="toastTitle">关注八百方微信</div>
+            <div class="toastContent">
+                <p>在微信添加搜索“<em>八百方</em>”公众号进行关注，并在“<em>手机商城</em>”菜单进行购物，首单即可享受<em>立减5元优惠</em>!</p>
+            </div>
+            <div class="toastBtn">
+                <a href="javascript:void(0);" class="btnKnow">知道了</a>
+            </div>
+        </div>
+        <div class="offshelfToast" id="wxbuhuoToast">
+            <div class="toastTitle">已收到申请</div>
+            <div class="toastContent">
+                <p>店小二马上为您补货，请记得回来查看哦！</p>
+                <img src="images/pDetail/qrCode.png">
+
+                <p class="grey">偷偷告诉你，现在微信首单立减5元~还有更多优惠等你发掘</p>
+            </div>
+            <div class="toastBtn">
+                <a href="index.html" class="btnOutside">去其他逛逛</a><a href="javascript:void(0);" class="btniKnow">知道了</a>
+            </div>
+        </div>
+        <div class="offshelfToast" id="buhuoToast">
+            <div class="toastTitle">已收到申请</div>
+            <div class="toastContent">
+                <p>店小二马上为您补货，请记得回来查看哦！</p>
+
+                <p class="grey">偷偷告诉你，现在微信首单立减5元~还有更多优惠等你发掘</p>
+            </div>
+            <div class="toastBtn">
+                <a href="index.html" class="btnOutside">去其他逛逛</a><a href="javascript:void(0);" class="btniKnow">知道了</a>
+            </div>
+        </div>
+    </div>
+
+    <!--全屏广告-->
+    <div class="full_ad" id="full_ad">
+        <a id="advIndexA" href="" title="">
+            <img class="full_ad_img" id="full_ad_img" src="">
+        </a>
+        <a class="skip_full_ad" id="skip_full_ad" onclick="hide_full_ad()">跳过&nbsp;<span class="skip_timmer" id="skip_timmer">5</span></a>
+    </div>
+</div>
+
+<script charset="utf-8" src="http://trust.baidu.com/vcard/v.js?siteid=548427&amp;url=http%3A%2F%2Fwww.800pharm.com%2Fshop%2Fm%2FprodDetail.html%3Fprod_id%3D755130%26shop_code%3D100281%26source%3Dinternal&amp;source=&amp;rnd=447251348&amp;hm=1"></script>
+<script src="//hm.baidu.com/hm.js?e70be84907793e52f974a062e2bfcd4d"></script>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="../js/localStorage.js"></script>
+<script type="text/javascript" src="../js/lazyloadImg.js"></script>
+<script type="text/javascript" src="../js/constants.js"></script>
+<script type="text/javascript" src="../js/encrypt.js"></script>
+<script type="text/javascript" src="../js/hm.js"></script>
+<script type="text/javascript" src="../js/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="../js/swiper.animate1.0.2.min.js"></script>
+<script type="text/javascript" src="../js/prodDetail_loading.js"></script>
+<script type="text/javascript" src="../js/prodDetail_shelves.js"></script>
+<script type="text/javascript" src="../js/prodDetail_offshelf.js"></script>
+<script type="text/javascript" src="../js/ntkfstat.js"></script>
+<!-- 小能  -->
+<script language="javascript" type="text/javascript">
+var mySwiper= new Swiper('#pdImgContainer', {
+            loop:true,
+            autoplay:2000,
+            direction:'horizontal',
+            paginationClickable: true,
+            pagination:'.swiper-pagination',
+    })
+    /*var promotion = getLatestUrlToB2c(); //得到cookie中的推广参数
+        if (promotion != null && promotion != "") {
+            promotion = promotion.substring(1, promotion.length - 1);
+        } else {
+            promotion = getFirstLatestUrlToB2c();
+            if (promotion != null && promotion != "") {
+                promotion = promotion.substring(1, promotion.length - 1);
+            }
+        }
+    NTKF_PARAM = {
+            siteid: 'bf_1000',                         //平台基础id
+            settingid: 'bf_1000_9999',                //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+            uid: sessionCache.getItem("user_id") || "",                              //用户id
+            uname: sessionCache.getItem("user_id") || "",                          //用户级别,1为vip用户,0为普通用户
+            erpparam: promotion
+
+        }*/
+            
+</script>
+<script type="text/javascript" src="../js/common.js"></script>
+
+</body>
+</html>

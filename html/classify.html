@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<meta content="YES" name="apple-touch-fullscreen">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="telephone=no" name="format-detection">
+<link type="text/css" rel="stylesheet" href="../css/normalize.css">
+<link type="text/css" rel="stylesheet" href="../css/innerPage.css" />
+<link rel="apple-touch-icon" href="images/common/quick_Logo.png" />
+<link rel="apple-touch-icon-precomposed"  href="images/common/quick_Logo.png">
+<title>八百方网上药店触屏版</title>
+</head>
+
+<body>
+  <div class="wrap">
+        <header id="header" class="header"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<div class="hd_tit">
+  <input class="hd_input" id="hd_input" type="text" placeholder="搜索药品名/症状" readonly="readonly" value="">
+</div>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a id="daohang" class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<div id="searchMask" class="searchMask">
+  <div class="headerContainer">
+        <a href="javascript:searchMaskHide();" class="maskClose"></a>
+        <form class="searchBox">
+            <input class="main_input" type="text" placeholder="搜索药品名/症状" autocomplete="off" id="searchHeadContent">
+            <input class="search_btn" type="button" onclick="searchHead();">
+            <input class="empty_input" type="reset" value="">
+        </form>
+        <div class="autocomplete" style="display: none;"></div>
+    </div>
+</div>
+<script type="text/javascript" src="js/header.js?v=3.2"></script> 
+<script language="javascript" type="text/javascript">
+var promotion;
+jQuery(document).ready(function() {
+  promotion = getLatestUrl(); //得到cookie中的推广参数
+  var bf_iteminfo;
+  var bf_iteminfo_pay;
+  var bf_iteminfo_confirm;
+  NTKF_PARAM = {
+      siteid: 'bf_1000',                         //平台基础id
+      settingid: 'bf_1000_1450344131702',                //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+      uid:TempCache.getItem("user_id")||'',                             
+      uname:TempCache.getItem("user_id")||'游客'                           //用户级别,1为vip用户,0为普通用户
+  };
+  if(bf_iteminfo){
+      NTKF_PARAM.ntalkerparam = bf_iteminfo;
+  }
+    
+  if(bf_iteminfo_pay){
+    NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+    NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+  }
+
+   if( bf_iteminfo_confirm ) {
+    NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice; 
+    NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+   }
+}); 
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+      <div class="allsort">
+          <ul class="cataList">
+              <li class="cataItem cur">医疗器械</li>
+                <li class="cataItem">中西成药</li>
+                <li class="cataItem">营养保健</li>
+                <li class="cataItem">美容护理</li>
+                <li class="cataItem">母婴用品</li>
+                <li class="cataItem">成人用品</li>
+                <li class="cataItem">中药养生</li>
+                <li class="cataItem">隐形眼镜</li>
+            </ul>
+            <div class="cataDetail">
+              <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(155,24);">检测器械</a>
+                  <a class="categoryItem" href="javascript:searchThreeCategory(156,24);">助行器械</a>
+                  <a class="categoryItem" href="javascript:searchThreeCategory(157,24);">针灸拔罐</a>
+                  <a class="categoryItem" href="javascript:searchThreeCategory(158,24);">医用辅料</a>
+                    <a class="categoryItem" href="javascript:searchThreeCategory(159,24);">医疗用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(160,24);">保健理疗</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(161,24);">制氧器材</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(443,24);">家用医疗器械</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(453,24);">防辐射用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(626,24);">贴膏剂类</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(633,24);">其它器械</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(697,24);">肿瘤术后护理</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(4,1);">感冒清热</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(5,1);">呼吸系统</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(6,1);">胃肠用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(7,1);">肝胆用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(8,1);">泌尿系统</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(9,1);">心脑血管</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(10,1);">内分泌药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(11,1);">妇科用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(12,1);">儿科用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(14,1);">男科用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(15,1);">神经系统</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(17,1);">风湿跌打</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(19,1);">营养滋补</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(20,1);">皮肤外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(21,1);">抗生素类</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(22,1);">五官用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(23,1);">其它内服药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(70,1);">妇科外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(81,1);">儿科外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(150,1);">肿瘤用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(464,1);">商品组合</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(465,1);">皮肤用药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(524,1);">新稀特药</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(535,1);">风湿外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(543,1);">五官外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(549,1);">胃肠外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(552,1);">其它外用</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(555,1);">注射剂类</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(227,25);">丰胸/减肥</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(228,25);">心血管保健</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(570,25);">保健食品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(583,25);">食品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(600,25);">地方特产</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(603,25);">零食小吃</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(175,26);">时尚彩妆</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(229,26);">基础护理</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(230,26);">全身护理</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(231,26);">特殊化妆品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(389,26);">男士护理品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(410,26);">其它护理品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(429,26);">保健用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(440,26);">日化用品</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(194,28);">宝贝用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(646,28);">妈妈用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(655,28);">妈妈食品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(659,28);">宝贝食品</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(198,29);">避孕用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(199,29);">情趣用品</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(202,29);">检测用品</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="javascript:searchThreeCategory(189,27);">中药饮片</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(191,27);">礼品专区</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(395,27);">茗茶类</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(561,27);">药膳汤料</a>
+          <a class="categoryItem" href="javascript:searchThreeCategory(565,27);">参茸滋补</a>
+                </div>
+                <div class="categoryList">
+                  <a class="categoryItem" href="http://www.800pharm.com/shop/m/prodSearchList.html?obcid=24&twbcid=5020&thrbcid=5022">美瞳</a>
+          <a class="categoryItem" href="http://www.800pharm.com/shop/m/prodSearchList.html?obcid=24&twbcid=5020&thrbcid=5030">隐形近视眼镜</a>
+          <a class="categoryItem" href="http://www.800pharm.com/shop/m/prodSearchList.html?obcid=24&twbcid=5020&thrbcid=5023">隐形眼镜护理液</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="../js/localStorage.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/allSorts.js"></script>
+</html>

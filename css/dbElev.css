@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
+.searchList .box_pd .pd_price{height:20px; position:relative; z-index:1;}
+.searchList .box_pd .pd_price .dbElevPrice{padding-right:3px; padding-left:52px; background:url(../images/search/eleven_02.png) left center no-repeat; background-size:50px auto; border:1px solid #e81b2c; border-radius:4px; font-size:13px; color:#e81b2c; float:right;}
+.searchList .box_pd .pd_price .dbElevIcon{position:absolute; right:54px; top:-4px; width:45px; height:25px;}

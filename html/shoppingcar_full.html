@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<meta content="YES" name="apple-touch-fullscreen">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="telephone=no" name="format-detection">
+<link type="text/css" rel="stylesheet" href="../css/normalize.css">
+<link type="text/css" rel="stylesheet" href="../css/innerPage.css" />
+<link rel="apple-touch-icon" href="images/common/quick_Logo.png" />
+<link rel="apple-touch-icon-precomposed"  href="images/common/quick_Logo.png">
+<title>八百方网上药店触屏版</title>
+</head>
+
+<body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
+  <div class="wrap" id="loadingDiv" style="display:none;">
+      <div class="loginLoading"></div>
+    </div>
+    <div class="wrap">
+      <header id="header" class="header"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<p class="hd_tit" id="hd_tit">购物车</p>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<script type="text/javascript" src="js/header.js?v=3.2"></script>
+<script language="javascript" type="text/javascript">
+
+function getLatestUrlToB2c() {
+    var fromurl = getCookie("fromurl_800pharm_visitor");
+    var sem = getCookie("sem_src");
+    if (fromurl == null && sem == null) {
+        return "";
+    } else if (fromurl != null && sem == null) {
+        return "(F:"+fromurl+")";
+    } else if (fromurl == null && sem != null) {
+        return "(S:"+sem+")";
+    } else if(fromurl != null && sem != null){
+       return "("+fromurl+"，"+sem+")";
+    }
+}
+
+var promotion = getLatestUrlToB2c();  //得到cookie中的推广参数
+if(promotion != null && promotion != ""){
+    promotion = promotion.substring(1, promotion.length-1);
+}
+
+var bf_iteminfo;
+var bf_iteminfo_pay;
+var bf_iteminfo_confirm;
+NTKF_PARAM = {
+    siteid:'bf_1000',                         
+    settingid:'bf_1000_1450344131702',                
+    uid:TempCache.getItem("user_id")||'',                             
+    uname:TempCache.getItem("user_id")||'游客', 
+     erpparam : promotion
+
+};
+if(bf_iteminfo){
+    NTKF_PARAM.ntalkerparam = bf_iteminfo;
+}
+  
+  if(bf_iteminfo_pay){
+  NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+  NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+    }
+
+ if( bf_iteminfo_confirm ) {
+  
+  NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;  
+  NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+ }
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+<div class="myCart" id="notEmptyDiv" style="display:block;">
+  <p id="cart_header" class="cart_header">
+  <div class="allChoose">
+      <input type="checkbox" value="checkAll" name="checkAll" checked="checked">
+  </div>
+  您的购物车中有<span class="cl_red" id="productTotal">1</span>
+  件商品<a class="keepShopping" href="index.html">继续购物</a>
+  <a class="cDelete" href="javascript:delProBatch()"></a>
+  </p>
+  <ul id="cartList" class="cartList">
+      <li id="shopCode_100281">
+          <dl class="cart_list">
+              <dt class="cart_hd">
+                  <div class="merChoose">
+                      <input type="checkbox" checked="checked" value="shop" name="checkbox" shopcode="100281" class="shopCheckAll">
+                  </div>
+                  <a href="commodityList.html?shop_code=100281&amp;source=internal">广州博爱智谷医药连锁</a>
+              </dt>
+              <dd class="shopWelfare">
+                  <div class="cardDiscount">
+                      <span class="icon_discount">店铺优惠券</span>
+                      <ul class="cardList">
+                          <li class="cardItem">800减15</li>
+                          <li class="cardItem">400减5</li>
+                      </ul>
+                      <div class="popMask"></div>
+                      <div class="popBox">
+                          <div class="popTitle">
+                              <div class="popTit">领取优惠券</div>
+                              <div class="getCardShop">广州博爱智谷医药连锁</div>
+                              <div class="popClose">×</div>
+                          </div>
+                          <div class="popContent">
+                              <ul class="getCardList">
+                                  <li class="cardBox">
+                                      <div class="cardDetail">
+                                          <div class="cardCost">
+                                              <span class="cost">15</span>
+                                              元
+                                          </div>
+                                          <div class="cardLimit">订单满800元减15元</div>
+                                          <div class="cardDate">使用期限 2016.09.07-2016.12.31</div>
+                                      </div>
+                                      <a href="javascript:drawCard(10875,'1',100281,'','广州博爱智谷医药连锁','')" class="drawCard">领取</a>
+                                  </li>
+                                  <li class="cardBox">
+                                      <div class="cardDetail">
+                                          <div class="cardCost">
+                                              <span class="cost">5</span>
+                                              元
+                                          </div>
+                                          <div class="cardLimit">订单满400元减5元</div>
+                                          <div class="cardDate">使用期限 2016.09.07-2016.12.31</div>
+                                      </div>
+                                      <a href="javascript:drawCard(10876,'1',100281,'','广州博爱智谷医药连锁','')" class="drawCard">领取</a>
+                                  </li>
+                              </ul>
+                              <div class="popAlert">注：优惠券可以和红包同时使用！</div>
+                          </div>
+                      </div>
+                  </div>
+              </dd>
+              <dd id="755130_0">
+                  <div class="pdChoose">
+                      <input type="checkbox" checked="checked" name="checkbox" class="checkbox_100281" cname="checkbox_100281" value="p_755130_100281" pids=",755130">
+                  </div>
+                  <a class="imgA" href="prodDetail.html?prod_id=755130&amp;shop_code=100281&amp;source=internal">
+                      <img class="pro_img" width="48" height="48" style_external="width:48px; height:48px; border:1px solid #cccccc; " src="http://img.800pharm.com/images/20151208/20151208175222_710_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151208/20151208175222_710.jpg" data-original="http://img.800pharm.com/images/20151208/20151208175222_710_bbfm.jpg" style="width: 48px; height: 48px; border: 1px solid rgb(204, 204, 204); display: block;">
+                  </a>
+                  <div class="cDetail">
+                      <a href="prodDetail.html?prod_id=755130&amp;shop_code=100281" class="cName">生命一号 10ml*10支+40粒 提高记忆力</a>
+                      <p class="comboPdGuige">
+                          规格:<span class="cl_grey">218mg*40粒+10ml*10支</span>
+                      </p>
+                      <div class="cCount">
+                          <div class="countBox">
+                              <a class="minus" href="javascript:modCheckQuantity(0,755130,null,0,0,100281,0,0)">－</a>
+                              <input type="text" class="count" value="6" id="755130_num_0" maxlength="3" onkeyup="inputLimit(0,755130,null,0,0,100281,0,0)">
+                              <a class="plus" href="javascript:modCheckQuantity(1,755130,null,0,0,100281,0,0)">+</a>
+                          </div>
+                          <span id="p_755130_0_total" class="cPrice">￥180.00</span>
+                          <p class="cart_storage_tips">库存6件</p>
+                      </div>
+                  </div>
+              </dd>
+          </dl>
+          <p class="cart_ft">
+              总计：<span class="price" id="100281_sumPrices">￥180</span>
+          </p>
+      </li>
+  </ul>
+<div id="fixedCartMenu" class="fixedCartMenu">
+    <div class="settleBox">
+        <p>
+            合计:<span class="total">￥180.00</span>
+            (未含邮费)
+        </p>
+        <a class="settleBtn" id="buy_btn" href="javascript:orderConfirm();">结算</a>
+    </div>
+</div>
+<div id="fixedCartHead" class="fixedCartHead cart_header">
+    <div class="allChoose">
+        <input type="checkbox" value="checkAll" name="checkAll" checked="checked">
+    </div>
+    您的购物车中有<span class="cl_red" id="productTotal">1</span>
+    件商品<a class="keepShopping" href="index.html">继续购物</a>
+    <a class="cDelete" href="javascript:delProBatch()"></a>
+</div>
+</div>
+        <div class="cartNone" id="emptyDiv" style="display:none;">
+          <div id="noneNotice"></div>
+            <div id="interest"></div>
+        </div>
+        <div class="cartNone" id="noaliveDiv" style="display:none;">
+            <div>
+          <font size="4"><strong>您的购物车中有商品已经下架，以下的商品不能生成订单：</strong></font>
+      </div>
+            <div id="noalive_list"></div>
+            <div>
+          <font size="3" color="#BD0000">请注意：系统将把下架商品从您的购物车中清除，放入到"我的关注中"</font>
+      </div>
+      <a id="noAliveSubmit" class="buttoneComfirm" href="javascript:location.reload();">确定</a>
+        </div>
+        <div class="cartNone" id="packageAlertWin" style="display:none;">
+            <div>
+          <font size="4"><strong id="packageAlert"></strong></font>
+      </div>
+      <a id="noAliveSubmit" class="buttoneComfirm" href="javascript:location.reload();">确定</a>
+        </div>
+    </div>
+  <div style="display:none;" id="xtcart"></div>
+  
+  <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+  <script type="text/javascript" src="../js/localStorage.js"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript" src="../js/lazyloadImg.js"></script>
+  <script type="text/javascript" src="../js/constants.js"></script>
+  <script type="text/javascript" src="../js/encrypt.js"></script>
+  <script type="text/javascript" src="../js/wxgdLoginOrRegister.js"></script>
+  <script type="text/javascript" src="../js/myCart_loading.js"></script>
+  <script type="text/javascript" src="../js/myCart_notEmpty.js"></script>
+  <script type="text/javascript" src="../js/myCart_empty.js"></script>
+
+
+
+</body>
+</html>

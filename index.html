@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <meta content="YES" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+    <link rel="apple-touch-icon" href="img/common/quick_Logo.png"/>
+    <link rel="apple-touch-icon-precomposed" href="img/common/quick_Logo.png">
+    <title>上民生药业网上药店买药</title>
+    <style>
+        .fixedBox{
+            position: absolute;
+            bottom: 50px;
+            left: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            z-index: 999;
+            overflow: hidden;
+        }
+        .fixedBox a{
+            display: block;
+        }
+        .fixedBox img{
+            width: 100%;
+            height: 100%;
+        }
+      
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <header class="bbfHeader">
+        <div class="headerContainer">
+            <div class="main">
+                <form class="searchBox">
+                    <input class="main_input" type="text" placeholder="搜索药品名/症状" autocomplete="off"
+                           id="searchHeadContent">
+                    <input class="search_btn" type="button" onclick="searchHead();"/>
+                    <input class="empty_input" type="reset" value=""/>
+
+                    <div class="autocomplete"></div>
+                </form>
+            </div>
+            <a href="javascript:void(0);" onClick="wxScan()" id="barcode" class="scan">
+                <i class="i-scan"></i>
+            </a>
+            <a href="uploadChufang.html" class="upload">
+                <i class="i-upload"></i>
+            </a>
+        </div>
+    </header>
+    <nav class="bbfNav">
+        <a class="navLink" href="javascript:searchOneCategory(1);">
+            <i class="navIcon iyao"></i>
+
+            <p class="navTxt">中西成药</p>
+        </a>
+        <a class="navLink" href="javascript:searchOneCategory(25);">
+            <i class="navIcon iying"></i>
+
+            <p class="navTxt">保健食品</p>
+        </a>
+        <a class="navLink" href="javascript:searchOneCategory(24);">
+            <i class="navIcon iyi"></i>
+
+            <p class="navTxt">医疗器械</p>
+        </a>
+        <a class="navLink" href="javascript:searchOneCategory(29);">
+            <i class="navIcon iji"></i>
+
+            <p class="navTxt">计生用品</p>
+        </a>
+    </nav>
+
+    <!-- 滚动广告 -->
+    <div class="swiper-container swiper-container1 mBaner" id="banerContainer">
+       <div class="swiper-wrapper banerWrapper">
+            <div class="swiper-slide sliderpage">
+              <a href="#"><img src="img/20160907160813_121.jpg"></a>
+            </div>
+            <div class="swiper-slide sliderpage">
+              <a href="#"><img src="img/20160913115336_408.jpg"></a>
+            </div>
+            <div class="swiper-slide sliderpage">
+              <a href="#"><img src="img/20160822165308_66.jpg"></a>
+            </div>
+            <div class="swiper-slide sliderpage">
+              <a href="#"><img src="img/20160816173936_763.jpg"></a>
+            </div>
+            <div class="swiper-slide sliderpage">
+              <a href="#"><img src="img/20160824170434_1.jpg"></a>
+            </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">季节常见疾病</h4></div>
+        <div class="content-bd">
+            <div class="brick">
+                <div class="box-brick">
+                    <a id="sygd_url_wap_jibing_1" href="" class="brick-a1"><img id="sygd_img_wap_jibing_1" src="img/index/changjianjibing/20160115100818_949.png"></a>
+                </div>
+                <div class="box-brick">
+                    <a id="sygd_url_wap_jibing_2" href="" class="brick-a2"><img id="sygd_img_wap_jibing_2" src="img/index/changjianjibing/20160115100805_927.png"></a>
+                    <a id="sygd_url_wap_jibing_3" href="" class="brick-a3"><img id="sygd_img_wap_jibing_3" src="img/index/changjianjibing/20160115100754_874.png"></a>
+                </div>
+                <div class="box-brick">
+                    <a id="sygd_url_wap_jibing_4" href="" class="brick-a4"><img id="sygd_img_wap_jibing_4" src="img/index/changjianjibing/20160115100743_383.png"></a>
+                    <a id="sygd_url_wap_jibing_5" href="" class="brick-a5"><img id="sygd_img_wap_jibing_5" src="img/index/changjianjibing/20160115100729_723.png"></a>
+                    <a id="sygd_url_wap_jibing_6" href="" class="brick-a6"><img id="sygd_img_wap_jibing_6" src="img/index/changjianjibing/20160115100713_677.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">中老人医药馆</h4></div>
+        <div class="content-bd">
+            <div class="floor">
+                <a id="sygd_url1" class="leftImg" href=""><img id="sygd_img1" src="img/index/changjianjibing/20160115104311_615.png"></a>
+                <a id="sygd_url2" class="rightTopImg" href=""><img id="sygd_img2" src="img/index/changjianjibing/20160114182547_768.jpg"></a>
+                <a id="sygd_url3" class="rightBottmImg" href=""><img id="sygd_img3" src="img/index/changjianjibing/20160114182611_668.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">男性医药馆</h4></div>
+        <div class="content-bd">
+            <div class="floor">
+                <a id="sygd_url4" class="rightImg" href=""><img id="sygd_img4" src="img/index/changjianjibing/20160115104421_733.png" ></a>
+                <a id="sygd_url5" class="leftTopImg" href=""><img id="sygd_img5" src="img/index/changjianjibing/20160114182711_988.jpg"></a>
+                <a id="sygd_url6" class="leftBottomImg" href=""><img id="sygd_img6" src="img/index/changjianjibing/20160114182728_341.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">女性医药馆</h4></div>
+        <div class="content-bd">
+            <div class="floor">
+                <a id="sygd_url7" class="leftImg" href=""><img id="sygd_img7" src="img/index/changjianjibing/20160115104341_454.png"></a>
+                <a id="sygd_url8" class="rightTopImg" href=""><img id="sygd_img8" src="img/index/changjianjibing/20160114183107_785.jpg"></a>
+                <a id="sygd_url9" class="rightBottmImg" href=""><img id="sygd_img9" src="img/index/changjianjibing/20160114183119_694.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">小儿医药馆</h4></div>
+        <div class="content-bd">
+            <div class="floor">
+                <a id="sygd_url10" class="rightImg" href=""><img id="sygd_img10" src="img/index/changjianjibing/20160115104215_8.png" ></a>
+                <a id="sygd_url11" class="leftTopImg" href=""><img id="sygd_img11" src="img/index/changjianjibing/20160114183155_669.jpg"></a>
+                <a id="sygd_url12" class="leftBottomImg" href=""><img id="sygd_img12" src="img/index/changjianjibing/20160114183208_369.jpg"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">按病找药</h4></div>
+        <ul class="content-bd">
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=男科">
+                    <p>男科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_01.jpg" alt="男科" title="男科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=妇科">
+                    <p>妇科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_02.jpg" alt="妇科" title="妇科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=呼吸科">
+                    <p>呼吸科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_03.jpg" alt="呼吸科" title="呼吸科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=肿瘤科">
+                    <p>肿瘤科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_04.jpg" alt="肿瘤科" title="肿瘤科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=心脑血管科">
+                    <p>心脑血管科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_05.jpg" alt="心脑血管科" title="心脑血管科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=风湿骨科">
+                    <p>风湿骨科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_06.jpg" alt="风湿骨科" title="风湿骨科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=肝胆科">
+                    <p>肝胆科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_07.jpg" alt="肝胆科" title="肝胆科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=神经科">
+                    <p>神经科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_08.jpg" alt="神经科" title="神经科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=精神科">
+                    <p>精神科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_09.jpg" alt="精神科" title="精神科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=泌尿科">
+                    <p>泌尿科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_10.jpg" alt="泌尿科" title="泌尿科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=内分泌科">
+                    <p>内分泌科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_11.jpg" alt="内分泌科" title="内分泌科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=皮肤科">
+                    <p>皮肤科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_12.jpg" alt="皮肤科" title="皮肤科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=消化科">
+                    <p>消化科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_13.jpg" alt="消化科" title="消化科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=五官科">
+                    <p>五官科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_14.jpg" alt="五官科" title="五官科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=滋补调养科">
+                    <p>滋补调养科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_15.jpg" alt="滋补调养科" title="滋补调养科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=儿科">
+                    <p>儿科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_16.jpg" alt="儿科" title="儿科">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=两性健康">
+                    <p>两性健康</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_17.jpg" alt="两性健康" title="两性健康">
+                </a>
+            </li>
+            <li class="illness">
+                <a href="http://www.800pharm.com/shop/m/illnessSort.html?illness=母婴科">
+                    <p>母婴科</p>
+                    <img src="img/index/anbingzhaoyao/anbingzhaoyao_18.jpg" alt="母婴科" title="母婴科">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="hotsellBox" class="hotsellBox">
+        <div class="hsTabBox">
+            <div class="hsTab" id="hsTab">
+                <div class="hsTabItem"><span class="hsItemTxt" id="wapIndexProdRe1">热门推销</span></div>
+                <div class="hsTabItem curItem"><span class="hsItemTxt" id="wapIndexProdRe2">营养保健</span></div>
+                <div class="hsTabItem"><span class="hsItemTxt" id="wapIndexProdRe3">医疗器械</span></div>
+                <div class="hsTabItem"><span class="hsItemTxt" id="wapIndexProdRe4">滋补养生</span></div>
+            </div>
+        </div>
+        <div class="swiper-container hsBox" id="hsContainer">
+          <ul class="hsUl swiper-wrapper" style="width: 1280px; height: 1030px; transform: translate3d(-640px, 0px, 0px); transition-duration: 0.3s;">
+              <li class="hsLi swiper-slide swiper-slide-visible swiper-slide-active" style="width: 320px; height: 1030px;">
+                  <a class="hsProd" href="prodDetail.html?prod_id=723801&amp;shop_code=100281&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160317/20160317104433_650_bbfm.jpg" data-original="http://img.800pharm.com/images/20160317/20160317104433_650_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160317/20160317104433_650.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">益安宁丸</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥700</span>
+                          <span class="mPrice">￥790</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=706073&amp;shop_code=100281&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160630/20160630174547_949.jpg" data-original="http://img.800pharm.com/images/20160630/20160630174547_949_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160630/20160630174547_949.jpg" style="height:auto; width:auto;">
+                      </div>
+                      <p class="prodName">舒筋健腰丸</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥708</span>
+                          <span class="mPrice">￥799</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=718002&amp;shop_code=100281&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160621/20160621100025_543.jpg" data-original="http://img.800pharm.com/images/20160621/20160621100025_543_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160621/20160621100025_543.jpg" style="height:auto; width:auto;">
+                      </div>
+                      <p class="prodName">汇仁肾宝片</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥280</span>
+                          <span class="mPrice">￥359</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1235466&amp;shop_code=100629&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20150522/20150522174318_175_bbfm.jpg" data-original="http://img.800pharm.com/images/20150522/20150522174318_175_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20150522/20150522174318_175.JPG" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">恩必普</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥191</span>
+                          <span class="mPrice">￥220</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1220851&amp;shop_code=100629&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160112/20160112092419_883_bbfm.jpg" data-original="http://img.800pharm.com/images/20160112/20160112092419_883_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160112/20160112092419_883.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">海昆肾喜胶囊</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥58</span>
+                          <span class="mPrice">￥95.5</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=727133&amp;shop_code=100281&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160317/20160317103317_448_bbfm.jpg" data-original="http://img.800pharm.com/images/20160317/20160317103317_448_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160317/20160317103317_448.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">同仁堂六味地黄丸</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥51.6</span>
+                          <span class="mPrice">￥60</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=672016&amp;shop_code=100043&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20151028/20151028101256_866_bbfm.jpg" data-original="http://img.800pharm.com/images/20151028/20151028101256_866_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151028/20151028101256_866.png" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">钙尔奇</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥49</span>
+                          <span class="mPrice">￥65</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=790144&amp;shop_code=100281&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160317/20160317103946_395_bbfm.jpg" data-original="http://img.800pharm.com/images/20160317/20160317103946_395_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160317/20160317103946_395.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">五子衍宗丸</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥62.5</span>
+                          <span class="mPrice">￥75</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=587266&amp;shop_code=100043&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20151022/20151022155238_542_bbfm.jpg" data-original="http://img.800pharm.com/images/20151022/20151022155238_542_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151022/20151022155238_542.png" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">蔓迪</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥116</span>
+                          <span class="mPrice">￥203</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=870654&amp;shop_code=100043&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160118/20160118145213_22_bbfm.jpg" data-original="http://img.800pharm.com/images/20160118/20160118145213_22_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160118/20160118145213_22.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">奥利司他胶囊</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥116</span>
+                          <span class="mPrice">￥298</span>
+                      </p>
+                  </a>
+              </li>
+              <li class="hsLi swiper-slide" style="width: 320px; height: 1030px;">
+                  <a class="hsProd" href="prodDetail.html?prod_id=1120085&amp;shop_code=100499&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160411/20160411163459_716_bbfm.jpg" data-original="http://img.800pharm.com/images/20160411/20160411163459_716_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160411/20160411163459_716.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">每日每加 汤臣倍健R葡萄籽维生素C加E片 410mg/片*48片 美容美白抗氧化</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥78</span>
+                          <span class="mPrice">￥198</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1143801&amp;shop_code=100499&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160503/20160503165005_916_bbfm.jpg" data-original="http://img.800pharm.com/images/20160503/20160503165005_916_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160503/20160503165005_916.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">每日每加 汤臣倍健R维生素C片 1200mg/片*90片 增强身体免疫力</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥58</span>
+                          <span class="mPrice">￥168</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1103761&amp;shop_code=100499&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160401/20160401142447_445_bbfm.jpg" data-original="http://img.800pharm.com/images/20160401/20160401142447_445_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160401/20160401142447_445.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">每日每加 汤臣倍健鱼油软胶囊</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥23.8</span>
+                          <span class="mPrice">￥50</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1103781&amp;shop_code=100499&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160401/20160401145155_576_bbfm.jpg" data-original="http://img.800pharm.com/images/20160401/20160401145155_576_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160401/20160401145155_576.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">每日每加 汤臣倍健维生素C片</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥19.9</span>
+                          <span class="mPrice">￥75</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=403507&amp;shop_code=99200&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/99907/20140813/20140813163858_484_bbfm.jpg" data-original="http://img.800pharm.com/images/99907/20140813/20140813163858_484_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/99907/20140813/20140813163858_484.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">金斯利安多维片</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥55</span>
+                          <span class="mPrice">￥120</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=537047&amp;shop_code=100043&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/100043/20140428/20140428151308_297_bbfm.jpg" data-original="http://img.800pharm.com/images/100043/20140428/20140428151308_297_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/100043/20140428/20140428151308_297.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">centrum惠氏 善存 佳维片 </p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥91</span>
+                          <span class="mPrice">￥139</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=596980&amp;shop_code=100133&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/100133/20140721/20140721124400_302_bbfm.jpg" data-original="http://img.800pharm.com/images/100133/20140721/20140721124400_302_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/100133/20140721/20140721124400_302.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">新稀宝(锌硒宝片)- 补充锌、硒</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥258</span>
+                          <span class="mPrice">￥299</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=646456&amp;shop_code=100246&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="images/loading.png" data-original="http://img.800pharm.com/images/100246/20141017/20141017113101_63_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/100246/20141017/20141017113101_63.jpg">
+                      </div>
+                      <p class="prodName">太太美容口服液10ml*30支祛黄褐斑美容养颜改善皮肤水分 </p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥188</span>
+                          <span class="mPrice">￥238</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=853566&amp;shop_code=100367&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20151127/20151127155404_238_bbfm.jpg" data-original="http://img.800pharm.com/images/20151127/20151127155404_238_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151127/20151127155404_238.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">i26免疫营养粉 140g 优化免疫系统 双向免疫平衡 富含免疫球蛋白 </p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥499</span>
+                          <span class="mPrice">￥680</span>
+                      </p>
+                  </a>
+              </li>
+              <li class="hsLi swiper-slide" style="width: 320px; height: 1030px;">
+                  <a class="hsProd" href="prodDetail.html?prod_id=864933&amp;shop_code=100342&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20150803/20150803093258_382_bbfm.jpg" data-original="http://img.800pharm.com/images/20150803/20150803093258_382_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20150803/20150803093258_382.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">蓝科肤宁</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥35</span>
+                          <span class="mPrice">￥35</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1176707&amp;shop_code=100471&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/product/base/20130923/1379921229689_bbfm.jpg" data-original="http://img.800pharm.com/images/product/base/20130923/1379921229689_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/product/base/20130923/1379921229689.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">云南白药创可贴</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥10</span>
+                          <span class="mPrice">￥15</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=596937&amp;shop_code=100043&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/100043/20140721/20140721112128_744_bbfm.jpg" data-original="http://img.800pharm.com/images/100043/20140721/20140721112128_744_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/100043/20140721/20140721112128_744.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">康乐保安舒LC2000一件式 增强型造口袋 1903</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥175</span>
+                          <span class="mPrice">￥220</span>
+                      </p>
+                  </a>
+              </li>
+              <li class="hsLi swiper-slide" style="width: 320px; height: 1030px;">
+                  <a class="hsProd" href="prodDetail.html?prod_id=987347&amp;shop_code=100391&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160516/20160516153350_577_bbfm.jpg" data-original="http://img.800pharm.com/images/20160516/20160516153350_577_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160516/20160516153350_577.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">正宗云南文山三七粉超细粉</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥120</span>
+                          <span class="mPrice">￥297</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=924404&amp;shop_code=100265&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20151008/20151008144337_306_bbfm.jpg" data-original="http://img.800pharm.com/images/20151008/20151008144337_306_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151008/20151008144337_306.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">铁皮石斛条 新鲜铁皮石斛 现买现摘</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥220</span>
+                          <span class="mPrice">￥380</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=870276&amp;shop_code=100373&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20150807/20150807100355_413_bbfm.jpg" data-original="http://img.800pharm.com/images/20150807/20150807100355_413_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20150807/20150807100355_413.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">【养方堂】 菊花茶 花草茶 胎菊王 正品桐乡杭白菊 </p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥38</span>
+                          <span class="mPrice">￥49.8</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=765560&amp;shop_code=100283&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/100283/20150415/20150415112217_852_bbfm.jpg" data-original="http://img.800pharm.com/images/100283/20150415/20150415112217_852_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/100283/20150415/20150415112217_852.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">永刚饮片-松花粉</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥14.9</span>
+                          <span class="mPrice">￥22.35</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=804489&amp;shop_code=100335&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20150605/20150605165540_483_bbfm.jpg" data-original="http://img.800pharm.com/images/20150605/20150605165540_483_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20150605/20150605165540_483.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">鲁润 即食阿胶糕</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥148</span>
+                          <span class="mPrice">￥228</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=952369&amp;shop_code=100373&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20151103/20151103145739_567_bbfm.jpg" data-original="http://img.800pharm.com/images/20151103/20151103145739_567_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20151103/20151103145739_567.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">【养方堂】 云南特级紫皮石斛 铁皮枫斗 特级紫皮石斛 鲜条加工</p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥104.5</span>
+                          <span class="mPrice">￥135.7</span>
+                      </p>
+                  </a>
+                  <a class="hsProd" href="prodDetail.html?prod_id=1145040&amp;shop_code=100391&amp;source=internal">
+                      <div class="prodImage">
+                          <img class="pd_picture" style_external="height:auto; width:auto;" width="120" height="120" src="http://img.800pharm.com/images/20160506/20160506161920_192_bbfm.jpg" data-original="http://img.800pharm.com/images/20160506/20160506161920_192_bbfm.jpg" data-originalbak="http://img.800pharm.com/images/20160506/20160506161920_192.jpg" style="height: auto; width: auto; display: inline;">
+                      </div>
+                      <p class="prodName">（买1送1）原品 盛世汉方 丹参粉 220g 超细 野紫丹参片茶打粉 </p>
+                      <p class="prodPrice">
+                          <span class="bPrice">￥102</span>
+                          <span class="mPrice">￥188</span>
+                      </p>
+                  </a>
+              </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-content">
+        <div class="content-hd"><h4 class="content-border">民生药业旗下服务</h4></div>
+        <div class="content-bd fuwuImg">
+            <a class="left" target="_blank" href="http://www.800pharm.com/zhuanti/yaoshangtong/">
+                <img src="img/index/minshengfuwu/minshengfuwu_01.jpg" alt="药商通" title="药商通">
+            </a>
+            <a class="rightTop" target="_blank" href="javascript:void(0)">
+                <img src="img/index/minshengfuwu/minshengfuwu_02.jpg" alt="民生药业 正字号" title="民生药业 正字号">
+            </a>
+            <a class="rightBottom_1" target="_blank" href="javascript:void(0)">
+                <img src="img/index/minshengfuwu/minshengfuwu_03.jpg" alt="叮叮医生" title="叮叮医生">
+            </a>
+            <a class="rightBottom_2" target="_blank" href="javascript:void(0)">
+                <img src="img/index/minshengfuwu/minshengfuwu_04.jpg" alt="店讯通" title="店讯通">
+            </a>
+
+        </div>
+    </div>
+
+    <div class="contactBox">
+        <a class="phone" href="tel:4008855171">客服热线：400-885-5171</a>
+        <!--<a class="feedback" href="feedback.html">意见反馈</a>-->
+    </div>
+    <footer class="bbfFooter" id="footer"></footer>
+    <nav class="menu">
+        <a class="menu-item menu-sort" href="allSorts.html">
+            <i class="i-sort"></i>
+
+            <p class="t-menu">分类找药</p>
+        </a>
+
+        <div id="menu-kefu" class="menu-item menu-kefu">
+            <i class="i-kefu"></i>
+
+            <p class="t-menu">咨询药师</p>
+
+            <div id="kefu-sl" class="kefu-select">
+                <a class="kefu-type" href="javascript:;"
+                   onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');">售前咨询</a>
+                <a class="kefu-type" href="javascript:;"
+                   onclick="NTKF.im_openInPageChat('bf_1000_1450344184055');">售后服务</a>
+                <b></b>
+            </div>
+        </div>
+        <a class="menu-item menu-cart" href="myCart.html">
+            <i class="i-cart"></i>
+
+            <p class="t-menu">购物车</p>
+        </a>
+        <a class="menu-item menu-member" href="javascript:;" onClick="toMyHomePage()">
+            <i class="i-member"></i>
+
+            <p class="t-menu">个人中心</p>
+        </a>
+    </nav>
+
+    <!--全屏广告-->
+    <div class="full_ad" id="full_ad">
+        <a id="advIndexA" href="" title="">
+            <img class="full_ad_img" id="full_ad_img" src=""/>
+        </a>
+        <a class="skip_full_ad" id="skip_full_ad" onclick="hide_full_ad()">跳过&nbsp;<span class="skip_timmer" id="skip_timmer">5</span></a>
+    </div>
+
+    <!-- 浮动客服按钮 -->
+    <div class="fixedBox">
+        <a href="javascript:void(0);" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');">
+            <img src="img/kf_03.png" alt="药师咨询">
+        </a>
+    </div>
+    <!-- end/浮动客服按钮 -->
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/localStorage.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/constants.js"></script>
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+<!-- swiper滚动轮播 -->
+<script>
+  if($(".banerWrapper div").length){
+   var mySwiper = new Swiper ('.swiper-container1', {
+      autoplay:2000,
+      pagination : '.swiper-pagination',
+      direction: 'horizontal',
+      paginationClickable: true,
+      // 如果需要前进后退按
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      loop: true,
+      onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+      swiperAnimateCache(swiper); //隐藏动画元素 
+      swiperAnimate(swiper); //初始化完成开始动画
+      }, 
+      onSlideChangeEnd: function(swiper){ 
+      swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+      },
+    });
+    }
+    </script>
+<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="js/lazyloadImg.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+    <script>
+  //4、推荐商品
+  $(document).ready(function () {
+    if ($("#hsContainer li").length) {
+        var hsSwiper = new Swiper('#hsContainer', {
+            speed: 300,
+            mode: 'horizontal',
+            resistance: '100%',
+            simulateTouch: 'false',
+            //初始化
+            onFirstInit: function () {
+                var boxProd = 1;
+                var hsLi = $("#hsContainer li");
+                var num = hsLi.length
+                for (var i = 0; i <= num; i++) {
+                    var liProd = hsLi.eq(i - 1).find(".hsProd").length;//每个板块的商品总数
+                    if (liProd > boxProd) {
+                        boxProd = liProd;//计算出每个板块含有最多的商品数
+                    }
+                }
+                //根据商品数计算出板块高度
+                $("#hsContainer .swiper-wrapper").css("height", boxProd / 2 * 206);
+            },
+            onSlideChangeStart: function () {
+                $(".hsTab .curItem").removeClass('curItem');
+                $(".hsTab .hsTabItem").eq(hsSwiper.activeIndex).addClass('curItem');
+            }
+        });
+
+        $(".hsTab .hsTabItem").on('touchstart mousedown', function (e) {
+             e.preventDefault()
+              $(".hsTab .hsTabItem").removeClass('curItem');
+              $(this).addClass('curItem');
+              hsSwiper.swipeTo($(this).index());
+        });
+        $(".hsTab .hsTabItem").click(function (e){
+            e.preventDefault();
+        });
+    }
+})
+</script>
+<!-- 小能  -->
+<script language="javascript" type="text/javascript">
+/* var promotion = getLatestUrl();  //得到cookie中的推广参数
+  NTKF_PARAM = {
+      siteid: 'bf_1000',                         //平台基础id
+      settingid: 'bf_1000_9999',                //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+      uid: sessionCache.getItem("user_id")? sessionCache.getItem("user_id")+ promotion:promotion,                              //用户id
+      uname: sessionCache.getItem("user_id") || '游客'                         //用户级别,1为vip用户,0为普通用户
+  } */
+  
+  
+  var promotion = getLatestUrlToB2c(); //得到cookie中的推广参数
+  if (promotion != null && promotion != "") {
+    promotion = promotion.substring(1, promotion.length - 1);
+  } else {
+    promotion = getFirstLatestUrlToB2c();
+    if (promotion != null && promotion != "") {
+      promotion = promotion.substring(1, promotion.length - 1);
+    }
+  }
+  NTKF_PARAM = {
+    siteid : 'bf_1000', //平台基础id
+    settingid : 'bf_1000_9999', //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+    uid : sessionCache.getItem("user_id") || "", //用户id
+    uname : sessionCache.getItem("user_id") || "", //用户级别,1为vip用户,0为普通用户
+    erpparam : promotion
+
+  }
+</script>
+<script>
+    $(function(){
+        var winHeight = $(window).height();
+        var startScTop = $(document).scrollTop();
+
+        $('.fixedBox').css({'top': (startScTop + winHeight) - 180});
+
+        $(document).scroll(function(){
+            var scTop = $(document).scrollTop();
+            var topVal = (scTop + winHeight) - 180;
+
+            $('.fixedBox').css({top: topVal});
+        });
+    });
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script>
+</html>
+
+

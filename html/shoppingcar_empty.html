@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta charset="utf-8" />
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<meta content="YES" name="apple-touch-fullscreen">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="telephone=no" name="format-detection">
+<link type="text/css" rel="stylesheet" href="../css/normalize.css">
+<link type="text/css" rel="stylesheet" href="../css/innerPage.css" />
+<link rel="apple-touch-icon" href="images/common/quick_Logo.png" />
+<link rel="apple-touch-icon-precomposed"  href="images/common/quick_Logo.png">
+<title>八百方网上药店触屏版</title>
+</head>
+
+<body><div style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;" id="nTalk_post_hiddenElement"></div>
+  <div style="display:none;" class="wrap" id="loadingDiv">
+      <div class="loginLoading"></div>
+    </div>
+    <div class="wrap">
+      <header id="header" class="header"><a class="back" href="javascript:window.history.go(-1);" target="_top"></a>
+<div class="hd_tit">
+  <input class="hd_input" id="hd_input" placeholder="搜索药品名/症状" readonly="readonly" value="" type="text">
+</div>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a id="daohang" class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<div id="searchMask" class="searchMask">
+  <div class="headerContainer">
+        <a href="javascript:searchMaskHide();" class="maskClose"></a>
+        <form class="searchBox">
+            <input class="main_input" placeholder="搜索药品名/症状" autocomplete="off" id="searchHeadContent" type="text">
+            <input class="search_btn" onclick="searchHead();" type="button">
+            <input style="display: none;" class="empty_input" value="" type="reset">
+        </form>
+        <div class="autocomplete"></div>
+    </div>
+</div>
+<script type="text/javascript" src="js/header.js?v=3.2"></script> 
+<script language="javascript" type="text/javascript">
+var promotion;
+jQuery(document).ready(function() {
+  promotion = getLatestUrl(); //得到cookie中的推广参数
+  var bf_iteminfo;
+  var bf_iteminfo_pay;
+  var bf_iteminfo_confirm;
+  NTKF_PARAM = {
+      siteid: 'bf_1000',                         //平台基础id
+      settingid: 'bf_1000_1450344131702',                //Ntalker分配的缺省客服组id，平台客服组用平台的settingid，商家客服组用商家的settingid
+      uid:TempCache.getItem("user_id")||'',                             
+      uname:TempCache.getItem("user_id")||'游客'                           //用户级别,1为vip用户,0为普通用户
+  };
+  if(bf_iteminfo){
+      NTKF_PARAM.ntalkerparam = bf_iteminfo;
+  }
+    
+  if(bf_iteminfo_pay){
+    NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+    NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+  }
+
+   if( bf_iteminfo_confirm ) {
+    NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;   //璁㈠崟椤甸潰鎬讳环鏍� 
+    NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+   }
+}); 
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+      <div class="myCart" id="notEmptyDiv" style="display:none;">
+          <p id="cart_header"></p>
+            <ul id="cartList"></ul>
+            <div id="fixedCartMenu"></div>
+            <div id="fixedCartHead"></div>
+        </div>
+        <div class="cartNone" id="emptyDiv" style="display:block;">
+          <div class="noneNotice" id="noneNotice"><p>主人，购物车还是空空的</p><span>快来给我塞满吧~~~</span><a href="../index.html">去购物</a></div>
+            <div class="interest" id="interest"><h2>你可能感兴趣的商品</h2><ul id="pro_interest"><li><a class="iHref" href="prodDetail.html?prod_id=403691&amp;shop_code=99935&amp;source=internal"><img style="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" data-originalbak="http://img.800pharm.com/images/20160214/20160214131822_885.gif" data-original="http://img.800pharm.com/images/20160214/20160214131822_885_bbfm.jpg" class="iPicture" style_external="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" src="http://img.800pharm.com/images/20160214/20160214131822_885_bbfm.jpg" width="90" height="90"><p class="iName">【蜀中】 多酶片 （100片装）-四川蜀中制药有限公司</p><p class="iPrice">￥4.80</p></a></li><li><a class="iHref" href="prodDetail.html?prod_id=309012&amp;shop_code=99935&amp;source=internal"><img style="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" data-originalbak="http://img.800pharm.com/images/product/base/20120220/1329703512417.jpg" data-original="http://img.800pharm.com/images/product/base/20120220/1329703512417_bbfm.jpg" class="iPicture" style_external="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" src="http://img.800pharm.com/images/product/base/20120220/1329703512417_bbfm.jpg" width="90" height="90"><p class="iName">【丹生】氨肽素片0.2g*100片 辽宁丹生生物制药有限公司</p><p class="iPrice">￥4.80</p></a></li><li><a class="iHref" href="prodDetail.html?prod_id=547662&amp;shop_code=100133&amp;source=internal"><img style="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" data-originalbak="http://img.800pharm.com/images/100133/20140509/20140509152105_363.jpg" data-original="http://img.800pharm.com/images/100133/20140509/20140509152105_363_bbfm.jpg" class="iPicture" style_external="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" src="http://img.800pharm.com/images/100133/20140509/20140509152105_363_bbfm.jpg" width="90" height="90"><p class="iName">复方乙酰水杨酸片APC(阿司匹林) 400片 </p><p class="iPrice">￥20.00</p></a></li><li><a class="iHref" href="prodDetail.html?prod_id=554792&amp;shop_code=100133&amp;source=internal"><img style="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" data-originalbak="http://img.800pharm.com/images/100133/20140514/20140514113544_694.JPG" data-original="http://img.800pharm.com/images/100133/20140514/20140514113544_694_bbfm.jpg" class="iPicture" style_external="width:100px; margin:0 auto; display:block; border:1px solid #efefef;" src="http://img.800pharm.com/images/100133/20140514/20140514113544_694_bbfm.jpg" width="90" height="90"><p class="iName">雷贝拉唑钠肠溶胶囊(济诺)</p><p class="iPrice">￥58.00</p></a></li></ul></div>
+        </div>
+        <div class="cartNone" id="noaliveDiv" style="display:none;">
+            <div>
+          <font size="4"><strong>您的购物车中有商品已经下架，以下的商品不能生成订单：</strong></font>
+      </div>
+            <div id="noalive_list"></div>
+            <div>
+          <font color="#BD0000" size="3">请注意：系统将把下架商品从您的购物车中清除，放入到"我的关注中"</font>
+      </div>
+      <a id="noAliveSubmit" class="buttoneComfirm" href="javascript:location.reload();">确定</a>
+        </div>
+        <div class="cartNone" id="packageAlertWin" style="display:none;">
+            <div>
+          <font size="4"><strong id="packageAlert"></strong></font>
+      </div>
+      <a id="noAliveSubmit" class="buttoneComfirm" href="javascript:location.reload();">确定</a>
+        </div>
+    </div>
+  <div style="display:none;" id="xtcart"></div>
+  
+  <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+  <script type="text/javascript" src="../js/localStorage.js"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript" src="../js/lazyloadImg.js"></script>
+  <script type="text/javascript" src="../js/constants.js"></script>
+  <script type="text/javascript" src="../js/encrypt.js"></script>
+  <script type="text/javascript" src="../js/wxgdLoginOrRegister.js"></script>
+  <script type="text/javascript" src="../js/myCart_loading.js"></script>
+  <script type="text/javascript" src="../js/myCart_notEmpty.js"></script>
+  <script type="text/javascript" src="../js/myCart_empty.js"></script>
+
+</body>
+
+
+
+  
+  
+</html>

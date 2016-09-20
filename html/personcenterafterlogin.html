@@ -1,0 +1,273 @@
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><script charset="utf-8" src="http://trust.baidu.com/vcard/v.js?siteid=548427&amp;url=http%3A%2F%2Fwww.800pharm.com%2Fshop%2Fm%2FmemberHome.html&amp;source=&amp;rnd=506252094&amp;hm=1"></script><script src="//hm.baidu.com/hm.js?e70be84907793e52f974a062e2bfcd4d"></script>
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+<meta content="YES" name="apple-touch-fullscreen">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="telephone=no" name="format-detection">
+<link type="text/css" rel="stylesheet" href="../css/normalize.css">
+<link type="text/css" rel="stylesheet" href="../css/innerPage.css">
+<link rel="apple-touch-icon" href="images/common/quick_Logo.png">
+<link rel="apple-touch-icon-precomposed" href="images/common/quick_Logo.png">
+<title>八百方网上药店触屏版</title>
+<style type="text/css">.full-html,.full-body{width: 100% !important;height: 100% !important;margin: 0 !important;overflow: hidden !important;}.full-body *{display: none !important;}.full-iframe {display: block !important;}</style><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/zh_cn.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="lang"></script><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/chat.in.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="chatManage"></script><script type="text/javascript" async="async" charset="utf-8" src="http://dl.ntalker.com/js/b2b/comet.chat.js?siteid=bf_1000&amp;v=nt6.8.3&amp;t=2016.09.07_014742" data-requiremodule="TChat"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"><script class="C2D87952_5" type="text/javascript" async="async" src="http://him1-0.ntalker.com/flashIM/wdkstatus?action=conn&amp;params=bf_1000_ISME9754_1108745%2C1108745%2C%2C%2C%2C%2C%2Cbf_1000%2C%2C%2C%2Cguest93429744-C627-D7E3-1BF6-C092D65116A7%2C&amp;callback=callback_C2D87952&amp;ts=1473736506016&amp;callbackname=callback_C2D87952" charset="utf-8"></script></head>
+
+<body><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div>
+  <div class="wrap">
+      <header id="header" class="header"><a class="back" href="index.html" target="_top"></a>
+<p class="hd_tit" id="hd_tit">我的八百方</p>
+<div class="head_right">
+  <a class="kefu" href="javascript:;" onclick="NTKF.im_openInPageChat('bf_1000_1450344131702');"></a>
+  <a class="daohang" href="javascript:headNavToggle();"></a>
+</div>
+<nav class="head_nav" id="head_nav">
+  <a class="hn_index" href="/shop/m/index.html">首页</a>
+    <a class="hn_sort" href="/shop/m/allSorts.html">分类找药</a>
+    <a class="hn_cart" href="/shop/m/myCart.html">购物车</a>
+    <a class="hn_memb" href="javascript:toMyHomePage();">个人中心</a>
+    <!--<a class="hn_fb" href="/shop/m/feedback.html">意见反馈</a>-->
+</nav>
+<script type="text/javascript" src="js/header.js?v=3.2"></script>
+<script language="javascript" type="text/javascript">
+
+function getLatestUrlToB2c() {
+    var fromurl = getCookie("fromurl_800pharm_visitor");
+    var sem = getCookie("sem_src");
+    if (fromurl == null && sem == null) {
+        return "";
+    } else if (fromurl != null && sem == null) {
+        return "(F:"+fromurl+")";
+    } else if (fromurl == null && sem != null) {
+        return "(S:"+sem+")";
+    } else if(fromurl != null && sem != null){
+       return "("+fromurl+"，"+sem+")";
+    }
+}
+
+var promotion = getLatestUrlToB2c();  //得到cookie中的推广参数
+if(promotion != null && promotion != ""){
+    promotion = promotion.substring(1, promotion.length-1);
+}
+
+var bf_iteminfo;
+var bf_iteminfo_pay;
+var bf_iteminfo_confirm;
+NTKF_PARAM = {
+    siteid:'bf_1000',                         
+    settingid:'bf_1000_1450344131702',                
+    uid:TempCache.getItem("user_id")||'',                             
+    uname:TempCache.getItem("user_id")||'游客', 
+     erpparam : promotion
+
+};
+if(bf_iteminfo){
+    NTKF_PARAM.ntalkerparam = bf_iteminfo;
+}
+  
+  if(bf_iteminfo_pay){
+  NTKF_PARAM.orderid=bf_iteminfo_pay.orderid;
+  NTKF_PARAM.orderprice=bf_iteminfo_pay.orderprice;
+    }
+
+ if( bf_iteminfo_confirm ) {
+  
+  NTKF_PARAM.orderprice=bf_iteminfo_confirm.orderprice;   //璁㈠崟椤甸潰鎬讳环鏍� 
+  NTKF_PARAM.ntalkerparam=bf_iteminfo_confirm.ntalkerparam;
+ }
+</script>
+<script type="text/javascript" src="http://dl.ntalker.com/js/b2b/ntkfstat.js?siteid=bf_1000" charset="utf-8"></script></header>
+      <div class="memberHome">
+          <div class="user_info">
+                <p class="username">欢迎你，<span id="username">幸福遇见</span></p>
+                <a class="logout" href="javascript:logout();">更换帐号</a>
+                <div id="memberRank" class="memberRank mr1"></div>
+            </div>
+            <div class="memberTab">
+                <a href="myCart.html" class="tab"><i class="icart"></i>购物车：<span id="cartCount" class="cl_red">1</span></a>
+            </div>
+            <div class="myOrder">
+              <a class="allOrder" href="myOrder4Batchid.html?porder_status=all">全部订单<i class="iright"></i></a>
+                <ul class="orderItem">
+                  <li>
+                      <a href="myOrder4Batchid.html?porder_status=-1">
+                          <i class="orderIcon ipay"></i>
+                            <p class="orderTxt">待付款</p>
+                            <b class="countNum" id="noPayOrderCount"></b>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="myOrder4Batchid.html?porder_status=-2">
+                          <i class="orderIcon irecieve"></i>
+                            <p class="orderTxt">待收货</p>
+                            <b class="countNum" id="havaSendOrderCount"></b>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="myOrder4Batchid.html?porder_status=-3">
+                          <i class="orderIcon icomment"></i>
+                            <p class="orderTxt">待评价</p>
+                            <b class="countNum" id="noReviewOrderCounts"></b>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="myOrder4Batchid.html?porder_status=-4">
+                          <i class="orderIcon irefund"></i>
+                            <p class="orderTxt">退款订单</p>
+                            <b class="countNum" id="drawBackCount"></b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="myWallet">
+                <!--a class="allWallet" href="javascript:toMyWallet();">我的钱包<i class="iright"></i></a-->
+                <a class="allWallet" href="javascript:alert('由于八百方钱包进行升级维护，暂停充值功能');">我的钱包<i class="iright"></i></a>
+                 <ul class="orderItem">
+                  <li>
+                      <a href="#">
+                          <p class="orderTxt walletName">余额</p>
+                          <p class="orderTxt walletName walletNum" id="balance">￥0.0</p>
+                          <b class="countNum"></b> 
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <p class="orderTxt walletName">积分</p>
+                          <p class="orderTxt walletName walletNum"><span id="rScore" class="cl_red">0</span></p>
+                          <b class="countNum"></b>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="myCoupon.html">
+                          <p class="orderTxt walletName">红包</p>
+                          <p class="orderTxt walletName walletNum" id="couponCount">0</p>
+                          <b class="countNum"></b>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="myWelfare.html">
+                          <p class="orderTxt walletName">优惠券</p>
+                          <p class="orderTxt walletName walletNum" id="cardCount">0</p>
+                          <b class="countNum"></b>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+            <div class="myManage">
+                <!-- <a class="myManage6" href="#">附近药店</a>
+                <a class="myManage7" href="#">处方管理</a> -->
+                <a class="myManage1" href="myFavorite.html">我的收藏</a>
+                <a class="myManage2" href="myAddress.html">地址管理</a>
+                <!-- <a class="myManage3" href="myWelfare.html">我的优惠券</a>
+                <a class="myManage4" href="myCoupon.html">我的红包</a> -->
+                <a class="myManage5" id="passwordChange" href="passwordChange.html" style="display: none;">密码修改</a>
+                <a class="myManage6" href="managerChufang.html">处方单管理</a>
+            </div>
+        </div>
+
+        <footer class="bbfFooter" id="footer"><p>互联网交易服务资格证书：国A20140001</p>
+<p><i class="wx"></i>微信公众号：<span class="guanzhu" id="wxfollow">babaifang800</span></p>
+<div class="mask_b"></div>
+<div class="footerToast" id="wxguanzhuToast">
+    <div class="toastTitle">关注八百方微信</div>
+    <div class="toastContent"><img src="images/pDetail/qrCode.png"></div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">知道了</a>
+    </div>
+</div>
+<div class="footerToast" id="guanzhuToast">
+    <div class="toastTitle">关注八百方微信</div>
+    <div class="toastContent">
+        <p>在微信添加搜索“<em>八百方</em>”公众号进行关注，并在“<em>手机商城</em>”菜单进行购物，首单即可享受<em>立减5元优惠</em>!</p>
+    </div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">知道了</a>
+    </div>
+</div>
+ <div class="footerToast" id="guanzhu_Toast">
+    <div class="toastTitle"></div>
+    <div class="toastContent">
+        <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请在微信浏览器下使用扫码功能哦~</p>
+    </div>
+    <div class="toastBtn">
+        <a href="javascript:void(0);" class="btnKnow">确认</a>
+    </div>
+</div> 
+<script type="text/javascript" src="js/footer.js?v=3.11"></script>
+</footer>
+
+        <!--
+        <div class="tkFooter">
+            <ul>
+                <li>
+                    <a title="" href="#">
+                        <img src="images/member/home.png"/>
+
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="#">
+                        <img src="images/member/ask.png"/>
+
+                        <p>咨询</p>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="#">
+                        <img src="images/member/cart.png"/>
+
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="javascript:toMyHomePage()">
+                        <img src="images/member/mine.png"/>
+
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        -->
+    </div>
+    
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript" src="../js/localStorage.js"></script>
+  <script type="text/javascript" src="../js/wxgdLoginOrRegister.js"></script>
+  <script type="text/javascript" src="../js/member.js"></script>
+  <script type="text/javascript" src="../js/constants.js"></script>
+  <script type="text/javascript" src="../js/encrypt.js"></script>
+  <div id="goog-gt-tt" class="skiptranslate" dir="ltr">
+    <div style="padding: 8px;">
+      <div>
+        <div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20">
+        </div>
+      </div>                  
+    </div>
+    <div class="top" style="padding: 8px; float: left; width: 100%;">
+      <h1 class="title gray">原文</h1>
+    </div>
+    <div class="middle" style="padding: 8px;">
+      <div class="original-text">
+        
+      </div>
+    </div>
+    <div class="bottom" style="padding: 8px;">
+      <div class="activity-links">
+        <span class="activity-link">提供更好的翻译建议</span><span class="activity-link"></span>
+      </div>
+      <div class="started-activity-container">
+        <hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;">
+      <div class="activity-root">
+      </div>
+      </div>
+    </div>
+    <div class="status-message" style="display: none;">
+      
+    </div>
+  </div>
+
+
+</body></html>
